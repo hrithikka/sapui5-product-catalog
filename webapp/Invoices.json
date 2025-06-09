@@ -1,0 +1,24 @@
+{
+  "Invoices": [
+    { "ProductName": "Laptop", "Quantity": 5, "ExtendedPrice": 1099.99 },
+    { "ProductName": "Monitor", "Quantity": 8, "ExtendedPrice": 199.99 },
+    { "ProductName": "Mouse", "Quantity": 15, "ExtendedPrice": 25.50 },
+    { "ProductName": "Keyboard", "Quantity": 10, "ExtendedPrice": 49.99 },
+    { "ProductName": "Headphones", "Quantity": 12, "ExtendedPrice": 79.00 },
+    { "ProductName": "Webcam", "Quantity": 6, "ExtendedPrice": 89.00 },
+    { "ProductName": "USB Hub", "Quantity": 20, "ExtendedPrice": 22.00 },
+    { "ProductName": "Charger", "Quantity": 14, "ExtendedPrice": 35.00 },
+    { "ProductName": "Smartphone", "Quantity": 7, "ExtendedPrice": 999.99 },
+    { "ProductName": "Tablet", "Quantity": 9, "ExtendedPrice": 649.00 },
+    { "ProductName": "External Hard Drive", "Quantity": 11, "ExtendedPrice": 120.00 },
+    { "ProductName": "SSD", "Quantity": 10, "ExtendedPrice": 159.99 },
+    { "ProductName": "RAM 16GB", "Quantity": 18, "ExtendedPrice": 75.50 },
+    { "ProductName": "Graphics Card", "Quantity": 4, "ExtendedPrice": 499.99 },
+    { "ProductName": "CPU", "Quantity": 3, "ExtendedPrice": 349.00 },
+    { "ProductName": "Motherboard", "Quantity": 6, "ExtendedPrice": 210.00 },
+    { "ProductName": "Power Supply", "Quantity": 5, "ExtendedPrice": 99.99 },
+    { "ProductName": "Cooling Fan", "Quantity": 15, "ExtendedPrice": 29.99 },
+    { "ProductName": "Gaming Chair", "Quantity": 2, "ExtendedPrice": 259.99 },
+    { "ProductName": "Microphone", "Quantity": 8, "ExtendedPrice": 139.00 }
+  ]
+}

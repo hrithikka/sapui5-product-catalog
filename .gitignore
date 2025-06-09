@@ -1,0 +1,26 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+.nyc_output/
+
+# macOS system files
+.DS_Store
+
+# UI5 cache and build artifacts
+.webapp/localService/metadata.xml
+
+# VSCode settings
+.vscode/
+
+# dotenv environment variables (if used)
+.env*
+
+# Test output
+test-results/
