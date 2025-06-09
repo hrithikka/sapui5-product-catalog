@@ -71,4 +71,84 @@ sapui5-product-catalog/
         ├── App.controller.js
         └── InvoiceList.controller.js
 
-Next: Week 2 – Routing, OData Integration & Dialogs
+✅ Week 2 – Navigation, OData Integration, Fragments, Formatters
+Goal: Connect to live OData service, implement master-detail navigation, and show detailed dialogs using fragments.
+
+🚀 Implemented
+Routing Setup:
+
+Defined routes (main, detail) and targets in manifest.json
+
+Enabled routing in Component.js using this.getRouter().initialize();
+
+Linked InvoiceList (main) and InvoiceDetail (detail) views via URL pattern
+
+Live Data Integration:
+
+Integrated Northwind OData v2 using "sap.ui.model.odata.v2.ODataModel"
+
+Created proxy using ui5-middleware-simpleproxy in ui5.yaml to bypass CORS issues
+
+Fragments for Product Detail Dialog:
+
+Used a reusable XML fragment ProductDetails.fragment.xml
+
+Showed product-specific info when the View button was pressed
+
+Formatter:
+
+Implemented a custom formatter.js inside model/ to format price in XX.XX USD
+
+Used in XML via:
+
+xml
+Copy
+Edit
+<ObjectNumber number="{path: 'UnitPrice', formatter: '.formatter.formatCurrency'}" />
+Binding Context:
+
+Passed the selected row's binding context to the dialog for accurate data display
+
+Dynamic Sorting & Filtering:
+
+Replaced old JSON logic (ExtendedPrice) with real OData field (UnitPrice)
+
+Updated search & sort to work with live backend data
+
+⚠️ Issues Faced 
+Blank Screen / Loader Stuck
+
+Root Cause: Used anonymous define() in wrong context.
+
+✅ Fix: Used ComponentContainer via sap.ui.require() inside sap.ui.getCore().attachInit()
+
+404 Errors – Component-preload.js
+
+Root Cause: UI5 tries to preload modules even if not manually created.
+
+✅ Fix: Ignored safely as it doesn’t affect runtime.
+
+OData Not Loading (CORS Issue)
+
+Root Cause: Northwind service was blocked due to missing CORS headers.
+
+✅ Fix: Added "ui5-middleware-simpleproxy" in ui5.yaml and mapped /northwind to the actual service.
+
+Formatter Not Found
+
+Root Cause: Mistyped folder name as uitl instead of util
+
+✅ Fix: Corrected path in import and moved the file if needed
+
+Dialog Not Showing Price/Quantity
+
+Root Cause: Old field names from local JSON (e.g., ExtendedPrice, Quantity) didn't match OData structure (UnitPrice, QuantityPerUnit)
+
+✅ Fix: Adjusted bindings inside ProductDetails.fragment.xml
+
+Sort → Table Went Blank
+
+Root Cause: Sorting on wrong property ExtendedPrice (non-existent in OData)
+
+✅ Fix: Switched sorter to use UnitPrice
+
