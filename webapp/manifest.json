@@ -1,7 +1,16 @@
 {
   "sap.app": {
     "id": "sap.ui.demo.walkthrough",
-    "type": "application"
+    "type": "application",
+    "dataSources": {
+      "northwind": {
+        "uri": "/northwind/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
   },
   "sap.ui5": {
     "rootView": {
@@ -17,10 +26,42 @@
     },
     "models": {
       "": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Invoices.json",
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "uri": "/northwind/",
         "settings": {
-          "preload": true
+          "defaultBindingMode": "TwoWay",  
+          "useBatch": false
+        }
+        
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "sap.ui.demo.walkthrough.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": "invoiceList"
+        },
+        {
+          "pattern": "invoice/{invoicePath}",
+          "name": "detail",
+          "target": "invoiceDetail"
+        }
+      ],
+      "targets": {
+        "invoiceList": {
+          "viewName": "InvoiceList"
+        },
+        "invoiceDetail": {
+          "viewName": "InvoiceDetail"
         }
       }
     }

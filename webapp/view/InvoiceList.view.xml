@@ -7,19 +7,28 @@
       placeholder="Search products"
       liveChange=".onFilterInvoices"
       width="50%" />
+    
     <Button text="Sort by Price" press=".onSortInvoices"/>
+    
     <Table
       id="invoiceList"
-      items="{/Invoices}">
+      items="{/Products}"
+      itemPress=".onListItemPress"
+      mode="SingleSelectMaster">
+      
       <columns>
         <Column><Text text="Product"/></Column>
         <Column><Text text="Price"/></Column>
+        <Column><Text text="Action"/></Column>
       </columns>
+      
       <items>
-        <ColumnListItem>
+        <ColumnListItem press=".onOpenDialog">
           <cells>
             <Text text="{ProductName}"/>
-            <Text text="{ExtendedPrice}"/>
+            <ObjectNumber
+              number="{path: 'UnitPrice', formatter: '.formatter.formatCurrency'}" />
+            <Button text="View" press=".onOpenDialog"/>
           </cells>
         </ColumnListItem>
       </items>

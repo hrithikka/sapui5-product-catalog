@@ -1,0 +1,10 @@
+<Dialog id="productDetailsDialog" title="Product Details" xmlns="sap.m" xmlns:core="sap.ui.core">
+  <VBox class="sapUiSmallMargin">
+    <Text text="Product: {ProductName}" />
+    <Text text="Price: {UnitPrice}" />
+    <Text text="Quantity: {QuantityPerUnit}" />
+  </VBox>
+  <endButton>
+    <Button text="Close" press=".onCloseDialog" />
+  </endButton>
+</Dialog>

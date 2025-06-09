@@ -1,0 +1,13 @@
+<mvc:View
+  controllerName="sap.ui.demo.walkthrough.controller.InvoiceDetail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="Invoice Detail">
+    <content>
+      <ObjectHeader
+        title="{ProductName}"
+        number="{ExtendedPrice}"
+        numberUnit="USD"/>
+    </content>
+  </Page>
+</mvc:View>
