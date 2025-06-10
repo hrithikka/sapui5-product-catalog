@@ -1,0 +1,132 @@
+/* 🌟 Global Page Styling */
+.sapMPage {
+  background-color: #f4f6f9;
+  font-family: "72", "Arial", sans-serif;
+}
+
+/* 📋 List Styling */
+.sapMListItems {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sapMListItems:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sapMSLI {
+  padding: 12px 20px;
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* 🔍 SearchBar Enhancement */
+.searchBar {
+  margin: 12px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  background-color: #fff;
+}
+
+/* 🔘 Primary Action Button */
+.buttonPrimary {
+  background-color: #007aff;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: background-color 0.3s ease;
+}
+
+.buttonPrimary:hover {
+  background-color: #005ecb;
+  cursor: pointer;
+}
+
+/* 📦 Dialog Styling */
+.sapMDialog {
+  border-radius: 10px;
+}
+
+/* 🧭 Responsive tweaks */
+@media (max-width: 600px) {
+  .sapMListItems {
+    margin: 0 4px;
+  }
+
+  .buttonPrimary {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* 🌙 DARK MODE OVERRIDES */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark-mode .sapMPage,
+body.dark-mode .sapMBar,
+body.dark-mode .sapMPageHeader,
+body.dark-mode .sapMTB {
+  background-color: #2b2b2b !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .sapMTitle,
+body.dark-mode .sapMLabel,
+body.dark-mode .sapMText,
+body.dark-mode .sapMSLITitle,
+body.dark-mode .sapMSLIDescription {
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .sapMList,
+body.dark-mode .sapMListItems,
+body.dark-mode .sapMSLI,
+body.dark-mode .sapMListTblRow {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .sapMBtnInner,
+body.dark-mode .sapMBtn {
+  background-color: #444 !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .sapMBtn:hover {
+  background-color: #555 !important;
+}
+
+body.dark-mode .sapMDialog,
+body.dark-mode .sapMDialogSection {
+  background-color: #2e2e2e !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .sapMDialog .sapMDialogTitle,
+body.dark-mode .sapMDialog .sapMText,
+body.dark-mode .sapMDialog .sapMLabel {
+  color: #f0f0f0 !important;
+}
+
+/* Input & SearchField */
+body.dark-mode .sapMSF,
+body.dark-mode .sapMSFI,
+body.dark-mode .sapMSF .sapMSFB,
+body.dark-mode .sapMSF .sapMInputBaseInner {
+  background-color: #333 !important;
+  color: #f0f0f0 !important;
+  border-color: #555 !important;
+}
+
+body.dark-mode .sapMSFI::placeholder,
+body.dark-mode .sapMSFI::-webkit-input-placeholder {
+  color: #bbb !important;
+}

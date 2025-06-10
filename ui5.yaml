@@ -14,4 +14,4 @@ server:
       afterMiddleware: serveResources
       mountPath: /northwind
       configuration:
-        baseUri: https://services.odata.org/V2/Northwind/Northwind.svc/
+        baseUri: "https://services.odata.org/V2/Northwind/Northwind.svc"

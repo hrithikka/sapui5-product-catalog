@@ -2,36 +2,43 @@
   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m">
-  <VBox class="sapUiSmallMargin">
-    <SearchField
-      placeholder="Search products"
-      liveChange=".onFilterInvoices"
-      width="50%" />
-    
-    <Button text="Sort by Price" press=".onSortInvoices"/>
-    
-    <Table
-      id="invoiceList"
-      items="{/Products}"
-      itemPress=".onListItemPress"
-      mode="SingleSelectMaster">
-      
-      <columns>
-        <Column><Text text="Product"/></Column>
-        <Column><Text text="Price"/></Column>
-        <Column><Text text="Action"/></Column>
-      </columns>
-      
-      <items>
-        <ColumnListItem press=".onOpenDialog">
-          <cells>
-            <Text text="{ProductName}"/>
-            <ObjectNumber
-              number="{path: 'UnitPrice', formatter: '.formatter.formatCurrency'}" />
-            <Button text="View" press=".onOpenDialog"/>
-          </cells>
-        </ColumnListItem>
-      </items>
-    </Table>
-  </VBox>
+
+  <App>
+    <Page id="invoicePage" title="Product List">
+      <subHeader>
+        <Toolbar>
+          
+
+          <SearchField
+            width="100%"
+            placeholder="Search by Product Name"
+            liveChange="onFilterInvoices" 
+            class="searchBar"/>
+          <Button text="Sort by Price" press="onSortInvoices" class="buttonPrimary" />
+          <Button id="themeToggleButton" text="🌙" press="onToggleTheme" tooltip="Toggle Dark Mode" />
+
+        </Toolbar>
+      </subHeader>
+
+      <content>
+        <List
+          id="invoiceList"
+          items="{
+            path: '/Products'
+          }"
+          growing="true"
+          growingScrollToLoad="true"
+          itemPress="onListItemPress">
+          <items>
+            <StandardListItem
+              title="{ProductName}"
+              description="Price: {path: 'UnitPrice', formatter: '.formatter.currency'}"
+              info="View"
+              type="Active"
+              press="onOpenDialog" />
+          </items>
+        </List>
+      </content>
+    </Page>
+  </App>
 </mvc:View>

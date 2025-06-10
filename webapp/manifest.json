@@ -2,6 +2,7 @@
   "sap.app": {
     "id": "sap.ui.demo.walkthrough",
     "type": "application",
+    "title": "Product Catalog App",
     "dataSources": {
       "northwind": {
         "uri": "/northwind/",
@@ -21,7 +22,8 @@
     "dependencies": {
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.f": {}
       }
     },
     "models": {
@@ -29,19 +31,18 @@
         "type": "sap.ui.model.odata.v2.ODataModel",
         "uri": "/northwind/",
         "settings": {
-          "defaultBindingMode": "TwoWay",  
+          "defaultBindingMode": "TwoWay",
           "useBatch": false
         }
-        
       }
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "viewPath": "sap.ui.demo.walkthrough.view",
         "controlId": "app",
-        "controlAggregation": "pages",
+        "controlAggregation": "beginColumnPages",
         "async": true
       },
       "routes": [
@@ -58,12 +59,24 @@
       ],
       "targets": {
         "invoiceList": {
-          "viewName": "InvoiceList"
+          "viewName": "InvoiceList",
+          "controlAggregation": "beginColumnPages",
+          "viewLevel": 1
         },
         "invoiceDetail": {
-          "viewName": "InvoiceDetail"
+          "viewName": "InvoiceDetail",
+          "controlAggregation": "midColumnPages",
+          "viewLevel": 2
         }
       }
-    }
+    },
+    "resources": {
+      "css": [
+       {
+         "uri": "css/style.css"
+       }
+     ]
+}
+
   }
 }
