@@ -152,3 +152,59 @@ Root Cause: Sorting on wrong property ExtendedPrice (non-existent in OData)
 
 ✅ Fix: Switched sorter to use UnitPrice
 
+
+✅ Week 3: Final App – Styling, Testing, GitHub Deployment
+🎯 Objective
+Polish the app with responsive layout, improved styling, add theme toggling (dark mode), and prepare for demo/deployment.
+
+🔨 What Was Implemented
+Responsive Layout
+Integrated FlexibleColumnLayout for a scalable UI, especially useful for master-detail navigation between Product List and Detail views.
+
+Custom Styling (style.css)
+
+Added polished visual enhancements for buttons, dialogs, list items, and page background.
+
+Designed both light and dark themes for user comfort.
+
+Implemented a sleek and interactive look using transitions and shadows.
+
+🌙 Dark Mode Toggle
+
+A toggle button was added (🌙/☀️) to switch between light and dark themes.
+
+Entire app UI—including list, toolbar, dialogs, buttons, and input fields—dynamically responds to the theme.
+
+Styling applied via CSS using body.dark-mode selectors.
+
+Testing
+Visual tests were conducted manually to ensure layout and theme behaved correctly across navigation, dialog popups, and user interaction.
+
+Deployment-Ready Git Integration
+
+Code was structured and committed cleanly using Git.
+
+Project repository includes all resources (CSS, XML views, controller, OData, fragments).
+
+🧩 What Was Not Implemented
+i18n (Multi-language support)
+Not implemented due to time constraints. Default app language remains English.
+
+⚠️ Difficulties Encountered
+Dark Mode Styling Challenges
+
+Required detailed inspection of SAPUI5 classes like .sapMList, .sapMDialog, .sapMSLI, etc.
+
+Needed multiple iterations to ensure dialog boxes, headers, search bar, and buttons were fully dark-themed.
+
+Theme Toggle Button
+
+Switching the emoji based on theme (🌙 to ☀️) required DOM handling and dynamic updates, eventually solved with JS controller logic.
+
+Routing + View Overlaps
+
+Initially faced issues with old elements (like test buttons) lingering in the DOM.
+
+Fixed by ensuring view IDs and routing targets were correctly managed.
+
+
